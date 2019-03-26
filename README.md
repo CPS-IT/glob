@@ -199,6 +199,6 @@ All contents of this package are licensed under the [MIT license].
 [Webmozart Path Utility]: https://github.com/webmozart/path-util
 [canonical form]: https://webmozart.github.io/path-util/api/latest/class-Webmozart.PathUtil.Path.html#_canonicalize
 [stream wrappers]: http://php.net/manual/en/wrappers.php
-[`Glob`]: https://cps-it.github.io/glob/docs/class-Webmozart.Glob.Glob.html
-[`GlobIterator`]: https://cps-it.github.io/glob/api/latest/class-Webmozart.Glob.Iterator.GlobIterator.html
-[`GlobFilterIterator`]: https://cps-it.github.io/glob/api/latest/class-Webmozart.Glob.Iterator.GlobFilterIterator.html
+[`Glob`]: https://cps-it.github.io/glob/docs/class-CPSIT.Glob.Glob.html
+[`GlobIterator`]: https://cps-it.github.io/glob/docs/class-CPSIT.Glob.Iterator.GlobIterator.html
+[`GlobFilterIterator`]: https://cps-it.github.io/glob/docs/class-CPSIT.Glob.Iterator.GlobFilterIterator.html
