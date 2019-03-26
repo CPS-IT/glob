@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <link rel="stylesheet" href="resources/bootstrap.min.css">
+        <link rel="stylesheet" href="resources/style.css">
+
+        <title>
+            Class CPSIT\Glob\Glob
+        </title>
+    </head>
+
+    <body>
+<div id="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">
+                                Overview
+                            </a>
+                        </li>
+
+                            <li>
+                                <a href="classes.html">Classes</a>
+                            </li>
+
+                            <li>
+                                <a href="interfaces.html">Interfaces</a>
+                            </li>
+
+
+
+
+                    </ul>
+
+                    <form id="search" class="pull-right">
+                        <input type="text" name="q" class="form-control text" placeholder="Search class, function or namespace" autofocus>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+            <div id="breadcrumbs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+
+<div class="pull-left type">
+    <span class="label label-success">Class</span>
+</div>
+
+<ol class="breadcrumb pull-left">
+        <li>
+            <a href="namespace-CPSIT.html">CPSIT</a>
+        </li>
+            <li class="backslash">\</li>
+        <li>
+            <a href="namespace-CPSIT.Glob.html">Glob</a>
+        </li>
+
+        <li class="backslash">\</li>
+        <li class="active">Glob</li>
+</ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+    <h1>Glob</h1>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Searches and matches file paths using Ant-like globs.
+
+This class implements an Ant-like version of PHP's `glob()` function. The
+wildcard "*" matches any number of characters except directory separators.
+The double wildcard "**" matches any number of characters, including
+directory separators.
+
+Use {@link glob()} to glob the filesystem for paths:
+
+```php
+foreach (Glob::glob('/project/**.twig') as $path) {
+    // do something...
+}
+```
+
+Use {@link match()} to match a file path against a glob:
+
+```php
+if (Glob::match('/project/views/index.html.twig', '/project/**.twig')) {
+    // path matches
+}
+```
+
+You can also filter an array of paths for all paths that match your glob with
+{@link filter()}:
+
+```php
+$filteredPaths = Glob::filter($paths, '/project/**.twig');
+```
+
+Internally, the methods described above convert the glob into a regular
+expression that is then matched against the matched paths. If you need to
+match many paths against the same glob, you should convert the glob manually
+and use {@link preg_match()} to test the paths:
+
+```php
+$staticPrefix = Glob::getStaticPrefix('/project/**.twig');
+$regEx = Glob::toRegEx('/project/**.twig');
+
+if (0 !== strpos($path, $staticPrefix)) {
+    // no match
+}
+
+if (!preg_match($regEx, $path)) {
+    // no match
+}
+```
+
+The method {@link getStaticPrefix()} returns the part of the glob up to the
+first wildcard "*". You should always test whether a path has this prefix
+before calling the much more expensive {@link preg_match()}.
+            </div>
+        </div>
+
+
+
+
+    <div class="info">
+        <strong>Final</strong><br>
+
+            <br>
+            <br>
+            <a href="source-class-CPSIT.Glob.Glob.html" class="open-source-code">Open source code</a>
+        <br>
+    </div>
+
+        <table class="summary table table-bordered table-responsive table-striped" id="methods">
+            <tr><th colspan="3">Methods Summary</th></tr>
+
+
+
+<tr id="_glob">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_glob">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#110-117">glob</a>( <span> string <span class="property-name">$glob</span> </span>, <span> int <span class="property-name">$flags</span> = <span class="php-num">0</span></span> )</code>
+
+            <div class="description">
+                Globs the file system paths matching the glob.
+
+The glob may contain the wildcard "*". This wildcard matches any number
+of characters, *including* directory separators.
+
+```php
+foreach (Glob::glob('/project/**.twig') as $path) {
+    // do something...
+}
+```
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_match">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_match">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#139-154">match</a>( <span> string <span class="property-name">$path</span> </span>, <span> string <span class="property-name">$glob</span> </span>, <span> int <span class="property-name">$flags</span> = <span class="php-num">0</span></span> )</code>
+
+            <div class="description">
+                Matches a path against a glob.
+
+```php
+if (Glob::match('/project/views/index.html.twig', '/project/**.twig')) {
+    // path matches
+}
+```
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_filter">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_filter">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#178-220">filter</a>( <span> array <span class="property-name">$paths</span> </span>, <span> string <span class="property-name">$glob</span> </span>, <span> int <span class="property-name">$flags</span> = <span class="php-num">1</span></span> )</code>
+
+            <div class="description">
+                Filters an array for paths matching a glob.
+
+The filtered array is returned. This array preserves the keys of the
+passed array.
+
+```php
+$filteredPaths = Glob::filter($paths, '/project/**.twig');
+```
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_getBasePath">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_getBasePath">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#257-280">getBasePath</a>( <span> string <span class="property-name">$glob</span> </span>, <span> int <span class="property-name">$flags</span> = <span class="php-num">0</span></span> )</code>
+
+            <div class="description">
+                Returns the base path of a glob.
+
+This method returns the most specific directory that contains all files
+matched by the glob. If this directory does not exist on the file system,
+it's not necessary to execute the glob algorithm.
+
+More specifically, the "base path" is the longest path trailed by a "/"
+on the left of the first wildcard "*". If the glob does not contain
+wildcards, the directory name of the glob is returned.
+
+```php
+Glob::getBasePath('/css/*.css');
+// =&gt; /css
+
+Glob::getBasePath('/css/style.css');
+// =&gt; /css
+
+Glob::getBasePath('/css/st*.css');
+// =&gt; /css
+
+Glob::getBasePath('/*.css');
+// =&gt; /
+```
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_toRegEx">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_toRegEx">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#314-441">toRegEx</a>( <span> string <span class="property-name">$glob</span> </span>, <span> int <span class="property-name">$flags</span> = <span class="php-num">0</span></span>, <span> <span class="property-name">$delimiter</span> = <span class="php-quote">'~'</span></span> )</code>
+
+            <div class="description">
+                Converts a glob to a regular expression.
+
+Use this method if you need to match many paths against a glob:
+
+```php
+$staticPrefix = Glob::getStaticPrefix('/project/**.twig');
+$regEx = Glob::toRegEx('/project/**.twig');
+
+if (0 !== strpos($path, $staticPrefix)) {
+    // no match
+}
+
+if (!preg_match($regEx, $path)) {
+    // no match
+}
+```
+
+You should always test whether a path contains the static prefix of the
+glob returned by {@link getStaticPrefix()} to reduce the number of calls
+to the expensive {@link preg_match()}.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_getStaticPrefix">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_getStaticPrefix">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#459-515">getStaticPrefix</a>( <span> string <span class="property-name">$glob</span> </span>, <span> int <span class="property-name">$flags</span> = <span class="php-num">0</span></span> )</code>
+
+            <div class="description">
+                Returns the static prefix of a glob.
+
+The "static prefix" is the part of the glob up to the first wildcard "*".
+If the glob does not contain wildcards, the full glob is returned.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_isDynamic">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public static
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_isDynamic">#</a>
+            <code><a href="source-class-CPSIT.Glob.Glob.html#528-531">isDynamic</a>( <span> string <span class="property-name">$glob</span> </span> )</code>
+
+            <div class="description">
+                Returns whether the glob contains a dynamic part.
+
+The glob contains a dynamic part if it contains an unescaped "*" or
+"{" character.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+        </table>
+
+
+
+        <table class="summary table table-bordered table-responsive table-striped" id="constants">
+            <tr><th colspan="3">Constants Summary</th></tr>
+<tr id="FILTER_VALUE">
+    <td class="attributes">
+        <code class="keyword">
+        public
+        
+        
+        int
+        </code>
+    </td>
+    <td class="name">
+        <code>
+            <a href="source-class-CPSIT.Glob.Glob.html#80" class="constant-name">FILTER_VALUE</a>
+        </code>
+
+        <div class="description">
+            Flag: Filter the values in {@link Glob::filter()}.
+
+        </div>
+    </td>
+    <td class="value">
+        <div>
+            <a href="#FILTER_VALUE" class="anchor pull-right">#</a>
+            <code><span class="php-num">1</span></code>
+        </div>
+    </td>
+</tr>
+<tr id="FILTER_KEY">
+    <td class="attributes">
+        <code class="keyword">
+        public
+        
+        
+        int
+        </code>
+    </td>
+    <td class="name">
+        <code>
+            <a href="source-class-CPSIT.Glob.Glob.html#85" class="constant-name">FILTER_KEY</a>
+        </code>
+
+        <div class="description">
+            Flag: Filter the keys in {@link Glob::filter()}.
+
+        </div>
+    </td>
+    <td class="value">
+        <div>
+            <a href="#FILTER_KEY" class="anchor pull-right">#</a>
+            <code><span class="php-num">2</span></code>
+        </div>
+    </td>
+</tr>
+        </table>
+
+
+
+
+    <div id="footer">
+        Generated by <a href="https://github.com/apigen/apigen">ApiGen</a>
+    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="resources/jquery-3.2.1.min.js"></script>
+        <script src="resources/jquery-ui-1.12.1.min.js"></script>
+
+        <script src="elementlist.js"></script>
+        <script src="resources/main.js"></script>
+    </body>
+</html>
+
+

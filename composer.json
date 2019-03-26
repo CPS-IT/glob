@@ -1,30 +1,19 @@
 {
-    "name": "cpsit/glob",
-    "description": "A PHP implementation of Ant's glob.",
     "license": "MIT",
+    "description": "The Webmozart Glob API documentation (forked by CPS-IT)",
+    "homepage": "https://CPS-IT.github.io/glob/api",
     "authors": [
         {
             "name": "Bernhard Schussek",
             "email": "bschussek@gmail.com"
         }
     ],
-    "require": {
-        "php": "^7.0",
-        "webmozart/path-util": "^2.2"
-    },
     "require-dev": {
-        "symfony/filesystem": "^2.5",
-        "sebastian/version": "*",
-        "phpunit/phpunit": "^6"
+        "cpsit/glob": "^5.0",
+        "apigen/apigen": "dev-master",
+        "roave/better-reflection": "dev-master#1efdfe5"
     },
-    "autoload": {
-        "psr-4": {
-            "CPSIT\\Glob\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "CPSIT\\Glob\\Tests\\": "tests/"
-        }
+    "config": {
+        "bin-dir": "bin"
     }
 }
