@@ -184,28 +184,21 @@ Contributions to the package are always welcome!
 * Report any bugs or issues you find on the [issue tracker].
 * You can grab the source code at the package's [Git repository].
 
-Support
--------
-
-If you are having problems, send a mail to bschussek@gmail.com or shout out to
-[@webmozart] on Twitter.
-
 License
 -------
 
 All contents of this package are licensed under the [MIT license].
 
-[API Documentation]: https://webmozart.github.io/glob/api/latest
+[API Documentation]: https://cps-it.github.io/glob/docs/
 [Composer]: https://getcomposer.org
 [Bernhard Schussek]: http://webmozarts.com
-[The Community Contributors]: https://github.com/webmozart/glob/graphs/contributors
-[issue tracker]: https://github.com/webmozart/glob/issues
-[Git repository]: https://github.com/webmozart/glob
-[@webmozart]: https://twitter.com/webmozart
+[The Community Contributors]: https://github.com/CPS-IT/glob/graphs/contributors
+[issue tracker]: https://github.com/CPS-IT/glob/issues
+[Git repository]: https://github.com/CPS-IT/glob
 [MIT license]: LICENSE
 [Webmozart Path Utility]: https://github.com/webmozart/path-util
 [canonical form]: https://webmozart.github.io/path-util/api/latest/class-Webmozart.PathUtil.Path.html#_canonicalize
 [stream wrappers]: http://php.net/manual/en/wrappers.php
-[`Glob`]: https://webmozart.github.io/glob/api/latest/class-Webmozart.Glob.Glob.html
-[`GlobIterator`]: https://webmozart.github.io/glob/api/latest/class-Webmozart.Glob.Iterator.GlobIterator.html
-[`GlobFilterIterator`]: https://webmozart.github.io/glob/api/latest/class-Webmozart.Glob.Iterator.GlobFilterIterator.html
+[`Glob`]: https://cps-it.github.io/glob/docs/class-Webmozart.Glob.Glob.html
+[`GlobIterator`]: https://cps-it.github.io/glob/api/latest/class-Webmozart.Glob.Iterator.GlobIterator.html
+[`GlobFilterIterator`]: https://cps-it.github.io/glob/api/latest/class-Webmozart.Glob.Iterator.GlobFilterIterator.html
